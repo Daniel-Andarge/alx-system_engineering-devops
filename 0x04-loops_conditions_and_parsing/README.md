@@ -1,7 +1,11 @@
 #  Loops, conditions and parsing
 ## About
 Bash project
+The for loop is the first of the three shell looping constructs. This loop allows for specification of a list of values. A list of commands is executed for each value in the list.
 
+The syntax for this loop is:
+
+for NAME [in LIST ]; do COMMANDS; done
 ## What i learn:
 - How to create SSH keys
 - What is the advantage of using #!/usr/bin/env bash over #!/bin/bash
