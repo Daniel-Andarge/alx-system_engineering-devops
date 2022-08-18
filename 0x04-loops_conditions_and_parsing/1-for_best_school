@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script is displaying "Best School" 10 times using for loop
+
+for (( c=0; c<10; c++ ))
+do  
+   echo "Best School"
+done
