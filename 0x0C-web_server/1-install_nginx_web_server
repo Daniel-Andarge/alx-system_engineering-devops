@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
-# A Bash script that configures a new Ubuntu machine to respect the requirements:
-#+ Install nginx
-#+ Nginx should be listening on port 80
-#+ When querying Nginx at its root / with a GET request (requesting a page) using curl, it must return a page that contains the string Hello World!
-
-
+# Installs nginx server
 apt-get update
 apt-get -y install nginx
 ufw allow 'Nginx HTTP'
