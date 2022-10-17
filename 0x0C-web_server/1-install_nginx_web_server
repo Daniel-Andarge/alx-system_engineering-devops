@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
-# Installs nginx server
-apt-get update
-apt-get -y install nginx
-ufw allow 'Nginx HTTP'
-echo "Hello World!" > /var/www/html/index.html
-service nginx start
+# A Bash script that configures a new Ubuntu machine to respect the requirements:
+#+ Install nginx
+#+ Nginx should be listening on port 80
+#+ When querying Nginx at its root / with a GET request (requesting a page) using curl, it must return a page that contains the string Hello World!
+
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get -y install nginx
+sudo service nginx start
+echo "Hello World!" | sudo tee /usr/share/nginx/html/index.html
