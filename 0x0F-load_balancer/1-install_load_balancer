@@ -1,37 +1,16 @@
 #!/usr/bin/env bash
-# 
-# Configure Nginx so that its HTTP response contains
-# a custom header
-#
-
-# Update packages
-sudo apt update
-
-# Add HAProxy PPA
-sudo apt install -y software-properties-common
-sudo add-apt-repository ppa:vbernat/haproxy-1.8 -y
-sudo apt update
-
-# Install HAProxy
-sudo apt install -y haproxy=1.8.\*
-
-hgproxy_conf_file="/etc/haproxy/haproxy.cfg"
-
-# Configure Load Balancer
-fname="frontend http"
-fbind="bind *:80"
-fmode="mode http"
-fdefault="default_backend web-backend"
-frontend="$fname\n\t$fbind\n\t$fmode\n\t$fdefault\n"
-
-bname="backend web-backend"
-bbalance="balance 30186-lb-01" 
-bserver1="server 30186-web-01 44.211.116.167:80 check"
-bserver2="server 30186-web-02 3.85.54.28:80 check"
-backend="$bname\n\t$bbalance\n\t$bserver1\n\t$bserver2"
-
-sudo sed -i "$ a $frontend" $hgproxy_conf_file
-sudo sed -i "$ a $backend" $hgproxy_conf_file
-
-# Restart HAProxy
+# Bash script to Install and configure HAproxy on your lb-01 server.
+sudo apt-get update
+sudo apt-get -y upgrade
+sudo apt-get -y install haproxy
+sudo chown -R ubuntu /etc/haproxy
+sudo echo "
+frontend web-frontend
+        bind *:80
+        mode http
+        default_backend web-backend
+backend web-backend
+        balance roundrobin
+        server 30186-web-01 44.211.116.167:80 check
+        server 30186-web-02 3.85.54.28:80 check" >> /etc/haproxy/haproxy.cfg
 sudo service haproxy restart
