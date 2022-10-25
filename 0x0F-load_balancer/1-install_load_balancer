@@ -11,6 +11,6 @@ frontend web-frontend
         default_backend web-backend
 backend web-backend
         balance roundrobin
-        server 30186-web-01 44.211.116.167:80 check
+        server 30186-web-01 100.26.169.211:80 check
         server 30186-web-02 3.85.54.28:80 check" >> /etc/haproxy/haproxy.cfg
 sudo service haproxy restart
