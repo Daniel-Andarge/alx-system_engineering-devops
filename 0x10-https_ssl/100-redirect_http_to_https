@@ -53,6 +53,8 @@ frontend www-https
 
 backend www-backend
         redirect scheme https if !{ ssl_fc }
+        server 30186-web-01 100.26.169.211:80
+        server 30186-web-02 3.85.54.28:80
         server 30186-web-01 100.26.169.211:80 check
         server 30186-web-02 3.85.54.28:80 check
 
