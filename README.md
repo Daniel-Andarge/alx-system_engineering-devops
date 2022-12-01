@@ -1,29 +1,38 @@
-# 🚀 System Engineering and Devops
-***
-Module of System engineering and Devops, carried out during Full Stack Software Engineering studies at Holberton School.
-
-### 💻 Technology Used
-***
-* scripts will be tested on Ubuntu 20.04 LTS
-* Bash script must pass `Shellcheck` (version `0.7.0` via `apt-get`)
-
-### ✏️ Projects carried out in the Repository
-***
-All the following folders are projects carried out during studies: 
-
-| Files | Description |
-| --- | --- |
-| [0x00-shell_basics] |
-| [0x01-shell_permissions]
-| [0x02-shell_redirections]
-| [0x03-shell_variables_expansions]
-| [0x04-loops_conditions_and_parsing]
-| [0x05-processes_and_signals]
-| [0x06-regular_expressions]
-| [0x07-networking_basics]
-|[0x09-web_infrastructure_design]
-### ✒️ Author
-***
+ssh ubuntu@100.26.169.211 
 
 
-Daniel Andarge - [GitHub](https://github.com/Daniel-Andarge) | [LinkedIn](https://www.linkedin.com/in/danielandarge/)
+#0x19. Postmortem
+
+Using one of the web stack debugging project issue or an outage you have personally face, write a postmortem. Most of you will never have faced an outage, so just get creative and invent your own :)
+
+#Requirements:
+
+## Issue Summary (that is often what executives will read) must contain:
+
+duration of the outage with start and end times (including timezone)
+what was the impact (what service was down/slow? What were user experiencing? How many % of the users were affected?)
+what was the root cause
+
+## Timeline (format bullet point, format: time - keep it short, 1 or 2 sentences) must contain:
+
+when was the issue detected
+how was the issue detected (monitoring alert, an engineer noticed something, a customer complained…)
+actions taken (what parts of the system were investigated, what were the assumption on the root cause of the issue)
+misleading investigation/debugging paths that were taken
+which team/individuals was the incident escalated to
+how the incident was resolved
+
+## Root cause and resolution must contain:
+
+explain in detail what was causing the issue
+explain in detail how the issue was fixed
+
+## Corrective and preventative measures must contain:
+
+what are the things that can be improved/fixed (broadly speaking)
+a list of tasks to address the issue (be very specific, like a TODO, example: patch Nginx server, add monitoring on server memory…)
+
+## Be brief and straight to the point, between 400 to 600 words
+
+While postmortem format can vary, but stick to this one for this project. 
+
