@@ -1,25 +1,26 @@
-# Configures Nginx to serve the route /airbnb-onepage/ from AirBnB_clone_v2.
+##
+# You should look at the following URL's in order to grasp a solid understanding
+# of Nginx configuration files in order to fully unleash the power of Nginx.
+# http://wiki.nginx.org/Pitfalls
+# http://wiki.nginx.org/QuickStart
+# http://wiki.nginx.org/Configuration
+#
+# Generally, you will want to move this file somewhere, and start with a clean
+# file but keep this around for reference. Or just disable in sites-enabled.
+#
+# Please see /usr/share/doc/nginx-doc/examples/ for more detailed examples.
+##
 
+# Default server configuration
+#
 server {
-    # Listen on port 80
-    listen      80 default_server;
-    listen      [::]:80 default_server ipv6only=on;
+        listen 80 default_server;
+        listen [::]:80 default_server;
 
-    # Use IP of server as domain name
-    server_name 44.192.82.110;
+        server_name _;
 
-    # Customize HTTP response header
-    add_header  X-Served-By 319-web-01;
-
-    # Serve /airbnb-onepage/ route from AirBnB_clone_v2
-    location = /airbnb-onepage/ {
-        proxy_pass http://127.0.0.1:5000/airbnb-onepage/;
-    }
-
-    # 404 error page
-    error_page 404 /404.html;
-    location /404 {
-        root /var/www/html;
-        internal;
-    }
+        location /airbnb-onepage {
+                include proxy_params;
+                proxy_pass http://127.0.0.1:5000;
+        }
 }
