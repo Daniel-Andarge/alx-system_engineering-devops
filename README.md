@@ -1,6 +1,6 @@
 # 🚀 System Engineering and Devops
 ***
-Module of System engineering and Devops, carried out during Full Stack Software Engineering studies at Holberton School.
+Module of System engineering and Devops, carried out during Software Engineering studies at ALX.
 
 ### 💻 Technology Used
 ***
