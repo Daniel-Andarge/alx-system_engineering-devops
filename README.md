@@ -1,6 +1,8 @@
 # 🚀 System Engineering and Devops
+![Shell](devops.png)
 ***
 Module of System engineering and Devops, carried out during Software Engineering studies at ALX.
+
 
 ### 💻 Technology Used
 ***
